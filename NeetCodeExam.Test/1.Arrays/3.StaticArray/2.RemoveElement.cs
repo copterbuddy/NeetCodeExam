@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NeetCodeExam.Test.StaticArray;
+namespace NeetCodeExam.Test.Arrays.StaticArray;
 public class RemoveElementTest
 {
     [Fact]
