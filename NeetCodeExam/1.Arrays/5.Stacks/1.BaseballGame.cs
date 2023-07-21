@@ -24,6 +24,15 @@ partial class Program
                 {
                     stacks[index-1] = null;
                     stacks[index] = null;
+                    index -= 2;
+                }
+                else if (item == "D")
+                {
+                    stacks[index] = (Int32.Parse(stacks[index - 1]) * 2).ToString();
+                }
+                else if (item == "+")
+                {
+                    stacks[index] = (Int32.Parse(stacks[index - 1]) + Int32.Parse(stacks[index - 2])).ToString();
                 }
             }
             index++;
