@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NeetCodeExam.Test.DynamicArrays.Arrays;
+namespace NeetCodeExam.Test.Arrays.DynamicArrays;
 public class ConcatenationOfArray
 {
     [Fact]

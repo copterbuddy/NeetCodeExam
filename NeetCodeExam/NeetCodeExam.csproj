@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="1.Arrays/5..Stacks/" />
-  </ItemGroup>
-
 </Project>
