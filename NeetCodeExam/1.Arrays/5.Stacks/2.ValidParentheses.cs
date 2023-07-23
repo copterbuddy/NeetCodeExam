@@ -11,28 +11,20 @@ partial class Program
     public static bool ValidParentheses(string s)
     {
         Stack<char> stack = new();
-        foreach (char item in s)
+        foreach (char c in s)
         {
-            if (stack.Count == 0 ||
-                stack.Peek() == '(' && item == ')' ||
-                stack.Peek() == '{' && item == '}' ||
-                stack.Peek() == '[' && item == ']'
-                )
-            {
-                stack.Push(item);
-            }
-            else if (   item == '(' ||
-                        item == '{' ||
-                        item == '[')
-            {
-                stack.Push(item);
-            }
-            else
-            {
+            if (c == '(') // if the character is an opening parenthesis
+                stack.Push(')'); // push the corresponding closing parenthesis onto the stack
+            else if (c == '{') // if the character is an opening brace
+                stack.Push('}'); // push the corresponding closing brace onto the stack
+            else if (c == '[') // if the character is an opening bracket
+                stack.Push(']'); // push the corresponding closing bracket onto the stack
+            else if (stack.Count is 0 || stack.Pop() != c) // if the character is a closing bracket
+                // if the stack is empty (i.e., there is no matching opening bracket) or the top of the stack
+                // does not match the closing bracket, the string is not valid, so return false
                 return false;
-            }
 
         }
-        return true;
+        return stack.Count is 0;
     }
 }
