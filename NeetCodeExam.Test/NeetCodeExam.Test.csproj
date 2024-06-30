@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -24,6 +24,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NeetCodeExam\NeetCodeExam.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="2.LinkedLists\" />
   </ItemGroup>
 
 </Project>
