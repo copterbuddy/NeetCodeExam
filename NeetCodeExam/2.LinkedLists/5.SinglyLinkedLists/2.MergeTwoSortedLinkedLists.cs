@@ -3,39 +3,34 @@ partial class Program
 {
     public class MergeTwoSortedLinkedLists
     {
-        public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+        public ListNode MergeTwoLists(ListNode l1, ListNode l2)
         {
-            ListNode mergeList = null;
-            while (list1 != null && list2 != null)
+            ListNode dummy = new();
+            var tail = dummy;
+
+            while (l1 is not null && l2 is not null)
             {
-                if (list1.val < list2.val)
+                if (l1.val < l2.val)
                 {
-                    if (mergeList == null)
-                    {
-                        mergeList = list2;
-                        list2 = list2.next;
-                        continue;
-                    }
-
-                    mergeList.next = list2;
-                    list2 = list2.next;
-                    continue;
+                    tail.next = l1;
+                    l1 = l1.next;
+                }else{
+                    tail.next = l2;
+                    l2 = l2.next;
                 }
-
-                if (mergeList == null)
-                {
-                    mergeList = list1;
-                    list1 = list1.next;
-                    continue;
-                }
-
-                mergeList.next = list1;
-                list1 = list1.next;
-                continue;
+                tail = tail.next;
             }
 
+            if (l1 is not null)
+            {
+                tail.next = l1;
+            }
+            else if (l2 is not null)
+            {
+                tail.next = l2;
+            }
 
-            return default;
+            return dummy.next;
         }
     }
 }

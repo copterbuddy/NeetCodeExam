@@ -22,14 +22,12 @@ public class MergeTwoSortedLinkedListsTest
         var app = new MergeTwoSortedLinkedLists();
         var result = app.MergeTwoLists(node0_0, node1_0);
 
-        // var node3r = new ListNode(0);
-        // var node2r = new ListNode(1, node3r);
-        // var node1r = new ListNode(2, node2r);
-        // var node0r = new ListNode(3, node1r);
-        // Assert.Equivalent(node0r, result);
-        Assert.Equal(1, 0);
-
-        //Input: list1 = [1,2,4], list2 = [1,3,5]
-        //Output: [1,1,2,3,4,5]
+        var node5r = new ListNode(5);
+        var node4r = new ListNode(4, node5r);
+        var node3r = new ListNode(3, node4r);
+        var node2r = new ListNode(2, node3r);
+        var node1r = new ListNode(1, node2r);
+        var node0r = new ListNode(1, node1r);
+        Assert.Equivalent(node0r, result);
     }
 }
