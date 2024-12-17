@@ -1,10 +1,9 @@
-namespace NeetCodeExam
+namespace NeetCodeExam;
+
+public partial class Program
 {
-    public partial class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        Console.WriteLine("Hello, World!");
     }
 }

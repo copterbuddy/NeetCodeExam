@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="2.LinkedLists\" />
+    <None Remove="2.LinkedLists\6.DoublyLinkedLists\1.DesignLinkedList.cs~RF55469db.TMP" />
   </ItemGroup>
 
 </Project>
