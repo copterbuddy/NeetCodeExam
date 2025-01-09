@@ -1,4 +1,4 @@
-﻿namespace NeetCodeExam.Sortings.InsertionSorts;
+﻿namespace NeetCodeExam.Sortings;
 
 public class InsertionSortsTest
 {
