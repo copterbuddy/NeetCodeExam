@@ -1,6 +1,4 @@
-﻿
-
-namespace NeetCodeExam.Sortings;
+﻿namespace NeetCodeExam.Sortings.MergeSorts;
 
 public class MergeSorts
 {
