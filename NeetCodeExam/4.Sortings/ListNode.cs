@@ -1,4 +1,4 @@
-namespace NeetCodeExam.Sortings.MergeSorts;
+namespace NeetCodeExam.Sortings;
 
 public class ListNode
 {
