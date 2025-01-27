@@ -10,9 +10,7 @@ public class InsertionSorts
             int j = i - 1;
             while (j >= 0 && pairs[j].Key > pairs[j + 1].Key)
             {
-                Pair tmp = pairs[j + 1];
-                pairs[j + 1] = pairs[j];
-                pairs[j] = tmp;
+                (pairs[j + 1] , pairs[j]) = (pairs[j], pairs[j + 1]);
                 j--;
             }
             result.Add(new(pairs));

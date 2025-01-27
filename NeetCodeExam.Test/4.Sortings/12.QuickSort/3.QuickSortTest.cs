@@ -43,7 +43,7 @@ public class QuickSortTest
         Assert.Equivalent(want[0], result[0]);
         Assert.Equivalent(want[1], result[1]);
         Assert.Equivalent(want[2], result[2]);
-        Assert.Equivalent(want[2], result[3]);
-        Assert.Equivalent(want[2], result[4]);
+        Assert.Equivalent(want[3], result[3]);
+        Assert.Equivalent(want[4], result[4]);
     }
 }
