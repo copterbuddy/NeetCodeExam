@@ -26,7 +26,7 @@ public class QuickSort {
         int swapper = start - 1;
         for (int current = start; current < end; current++)
         {
-            if (input[current] < pv)
+            if (input[current] < pv && input[current + 1] != pv)
             {
                 swapper++;
                 (input[current], input[swapper]) = (input[swapper], input[current]);
