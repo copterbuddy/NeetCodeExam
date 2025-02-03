@@ -26,10 +26,14 @@ public class QuickSort {
         int swapper = start - 1;
         for (int current = start; current < end; current++)
         {
-            if (input[current] < pv && input[current + 1] != pv)
+            if (input[current] < pv)
             {
                 swapper++;
-                (input[current], input[swapper]) = (input[swapper], input[current]);
+                
+                if (swapper < current)
+                {
+                    (input[current], input[swapper]) = (input[swapper], input[current]);
+                }
             }
         }
         int pivotIndex = swapper + 1;
@@ -63,7 +67,11 @@ public class QuickSort {
             if (pairs[current].Key < pv.Key)
             {
                 swapper++;
-                (pairs[swapper], pairs[current]) = (pairs[current], pairs[swapper]);
+
+                if (swapper < current)
+                {
+                    (pairs[swapper], pairs[current]) = (pairs[current], pairs[swapper]);
+                }
             }
         }
         
