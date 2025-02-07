@@ -55,7 +55,7 @@ public class BstInsertAndRemoveTest
                 )
         );
         
-        TreeNode result = app.InsertIntoBST(input, target);
+        TreeNode result = app.DeleteNode(input, target);
 
         Assert.Equivalent(want, result);
     }
