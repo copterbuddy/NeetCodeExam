@@ -50,4 +50,34 @@ public class Depth_First_Search {
         
         return node;
     }
+    
+    public TreeNode BuildTreeNTime(int[] preorder, int[] inorder)
+    {
+        int pre_idx = 0;
+        if (preorder?.Length is null or 0 || inorder?.Length is null or 0)
+        {
+            return null;
+        }
+        
+        Dictionary<int,int> inorderDict = inorder
+            .Select((value, index) => new {value, index})
+            .ToDictionary(pair => pair.value,pair => pair.index);
+
+        TreeNode Build(int[] preOrder, int left,int right)
+        {
+            if (left > right)
+            {
+                return null;
+            }
+            
+            int rootVal = preOrder[pre_idx++];
+            int mid = inorderDict[rootVal];
+            TreeNode node = new TreeNode(rootVal);
+            node.left = Build(preOrder, left, mid - 1);
+            node.right = Build(preOrder,mid + 1, right);
+            return node;
+        }
+        
+        return Build(preorder, 0, preorder.Length - 1);
+    }
 }

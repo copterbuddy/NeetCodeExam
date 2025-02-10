@@ -35,7 +35,7 @@ public class Depth_First_SearchTest
     }
 
     [Fact]
-    public async Task Test_BuildTree_Case1()
+    public async Task Test_BuildTree_N_power_2_time_complixity_Case1()
     {
         int[] preorder = [ 1, 2, 3, 4 ];
         int[] inorder = [ 2, 1, 3, 4 ];
@@ -49,13 +49,38 @@ public class Depth_First_SearchTest
     }
     
     [Fact]
-    public async Task Test_BuildTree_Case2()
+    public async Task Test_BuildTree_N_power_2_time_complixity_Case2()
     {
         int[] preorder = [ 1 ];
         int[] inorder = [ 1 ];
         TreeNode want = new(val: 1);
         
         TreeNode result = app.BuildTree(preorder, inorder);
+        Assert.Equivalent(want, result);
+    }
+    
+    [Fact]
+    public async Task Test_BuildTree_N_time_complixity_Case1()
+    {
+        int[] preorder = [ 1, 2, 3, 4 ];
+        int[] inorder = [ 2, 1, 3, 4 ];
+        TreeNode want = new(val: 1,
+            left: new (val: 2),
+            right: new (val: 3,
+                right: new (val: 4)));
+        
+        TreeNode result = app.BuildTreeNTime(preorder, inorder);
+        Assert.Equivalent(want, result);
+    }
+    
+    [Fact]
+    public async Task Test_BuildTree_N_time_complixity_Case2()
+    {
+        int[] preorder = [ 1 ];
+        int[] inorder = [ 1 ];
+        TreeNode want = new(val: 1);
+        
+        TreeNode result = app.BuildTreeNTime(preorder, inorder);
         Assert.Equivalent(want, result);
     }
 }
