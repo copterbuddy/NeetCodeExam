@@ -34,4 +34,20 @@ public class Depth_First_Search {
         sorted.Add(root.val);
         InOrderK(root.right, sorted);
     }
+    
+    public TreeNode BuildTree(int[] preorder, int[] inorder)
+    {
+        if (preorder?.Length is null or 0 || inorder?.Length is null or 0)
+        {
+            return null;
+        }
+        
+        int root = preorder[0];
+        int mid = Array.IndexOf(inorder, root);
+        TreeNode node = new TreeNode(root);
+        node.left = BuildTree(preorder.Skip(1).Take(mid).ToArray(), inorder.Take(mid).ToArray());
+        node.right = BuildTree(preorder.Skip(mid+1).ToArray(),inorder.Skip(mid+1).ToArray());
+        
+        return node;
+    }
 }
