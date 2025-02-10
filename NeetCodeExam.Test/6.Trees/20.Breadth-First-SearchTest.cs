@@ -20,4 +20,17 @@ public class Breadth_First_SearchTest
         List<List<int>> result = app.LevelOrder(input);
         Assert.Equivalent(want, result);
     }
+
+    [Fact]
+    public async Task Test_RightSideView_Case1()
+    {
+        TreeNode input = new(val: 1,
+            left: new(val: 2),
+            right: new (val: 3));
+
+        List<int> want = [1,3];
+        
+        List<int> result = app.RightSideView(input);
+        Assert.Equivalent(want, result);
+    }
 }
