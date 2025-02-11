@@ -62,6 +62,16 @@ public class TreeMazeTest
     }
 
     [Fact]
+    public async Task Test_Subsets_For_Case1()
+    {
+        int[] input = [1, 2, 3];
+        IList<List<int>> want = [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]];
+
+        IList<IList<int>> result = app.subsets_for(input);
+        Assert.Equivalent(want, result);
+    }
+
+    [Fact]
     public async Task Test_CombinationSum_Case1()
     {
         int[] input = [3, 4, 5];
