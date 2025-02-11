@@ -40,4 +40,24 @@ public class TreeMazeTest
         bool result = app.HasPathSum(input, 0);
         Assert.Equivalent(false, result);
     }
+
+    [Fact]
+    public async Task Test_Subsets_Case1()
+    {
+        int[] input = [1, 2, 3];
+        List<List<int>> want = [[1, 2, 3], [1, 2], [1, 3], [1], [2, 3], [2], [3], []];
+
+        List<List<int>> result = app.Subsets(input);
+        Assert.Equivalent(want, result);
+    }
+
+    [Fact]
+    public async Task Test_Subsets_Case2()
+    {
+        int[] input = [7];
+        List<List<int>> want = [[7], []];
+
+        List<List<int>> result = app.Subsets(input);
+        Assert.Equivalent(want, result);
+    }
 }

@@ -26,4 +26,27 @@ public class TreeMaze
 
         return false;
     }
+
+    public List<List<int>> Subsets(int[] nums)
+    {
+        List<List<int>> result = new();
+        List<int> subset = new();
+
+        void dfs(int i)
+        {
+            if (i >= nums.Length)
+            {
+                result.Add(new(subset));
+                return;
+            }
+
+            subset.Add(nums[i]);
+            dfs(i + 1);
+            subset.RemoveAt(subset.Count - 1);
+            dfs(i + 1);
+        }
+
+        dfs(0);
+        return result;
+    }
 }
