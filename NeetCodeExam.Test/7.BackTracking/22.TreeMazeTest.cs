@@ -60,4 +60,14 @@ public class TreeMazeTest
         List<List<int>> result = app.Subsets(input);
         Assert.Equivalent(want, result);
     }
+
+    [Fact]
+    public async Task Test_CombinationSum_Case1()
+    {
+        int[] input = [3, 4, 5];
+        List<List<int>> want = [[3, 3, 3, 3, 4], [3, 3, 5, 5], [4, 4, 4, 4], [3, 4, 4, 5]];
+
+        List<List<int>> result = app.CombinationSum(input, 16);
+        Assert.Equivalent(want, result);
+    }
 }

@@ -49,4 +49,42 @@ public class TreeMaze
         dfs(0);
         return result;
     }
+
+
+
+    /*
+    3
+    |
+    3
+    |\
+    3 4
+    | | \
+    3 4  5
+    |
+    3
+    |
+    3
+    */
+    public List<List<int>> CombinationSum(int[] nums, int target)
+    {
+        List<List<int>> result = new();
+
+        void dfs(int i, List<int> cur, int total, int[] nums, int target)
+        {
+            if (total == target)
+            {
+                result.Add(new(cur));
+                return;
+            }
+
+            if (total > target || i >= nums.Length) return;
+
+            cur.Add(nums[i]);
+            dfs(i, cur, total + nums[i], nums, target);
+            cur.Remove(cur.Last());
+            dfs(i + 1, cur, total, nums, target);
+        }
+        dfs(0, new List<int>(), 0, nums, target);
+        return result;
+    }
 }
