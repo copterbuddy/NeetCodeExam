@@ -13,8 +13,8 @@ public class ContainDuplicate
                 continue;
             }
 
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }

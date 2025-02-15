@@ -9,7 +9,7 @@ public class ContainDuplicateTest
     {
         int[] nums = [1, 2, 3, 1];
         bool result = app.ContainsDuplicate(nums);
-        Assert.False(result);
+        Assert.True(result);
     }
 
     [Fact]
@@ -17,6 +17,6 @@ public class ContainDuplicateTest
     {
         int[] nums = [1, 2, 3, 4];
         bool result = app.ContainsDuplicate(nums);
-        Assert.True(result);
+        Assert.False(result);
     }
 }
