@@ -12,4 +12,13 @@ public class GroupsAnagramsTest
         List<List<string>> want = [["hat"], ["act", "cat"], ["stop", "pots", "tops"]];
         Assert.Equivalent(want, result);
     }
+
+    [Fact]
+    public void TestGroupAnagrams_By_Map_Success_Case1()
+    {
+        string[] strs = ["act", "pots", "tops", "cat", "stop", "hat"];
+        List<List<string>> result = app.GroupAnagrams_By_Map(strs);
+        List<List<string>> want = [["hat"], ["act", "cat"], ["stop", "pots", "tops"]];
+        Assert.Equivalent(want, result);
+    }
 }
