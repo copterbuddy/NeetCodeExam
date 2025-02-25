@@ -4,6 +4,11 @@ public class LongestConsecutiveSequence
 {
     public int LongestConsecutive(int[] nums)
     {
+        if (nums?.Length is null or 0)
+        {
+            return 0;
+        }
+
         Dictionary<int, int> map = nums.Distinct().ToDictionary((k) => k, (v) => v);
         Dictionary<int, int> result = new();
 
