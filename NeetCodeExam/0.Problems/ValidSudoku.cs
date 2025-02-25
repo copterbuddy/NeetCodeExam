@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace NeetCodeExam.Problems;
 
 public class ValidSudoku
