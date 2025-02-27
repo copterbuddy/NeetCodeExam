@@ -15,6 +15,14 @@ public class ValidPalindromeTest
     }
 
     [Fact]
+    public void TestIsAnagram_Want_True_Success_Case2()
+    {
+        string s = "No lemon, no melon";
+        bool result = app.IsPalindrome(s);
+        Assert.True(result);
+    }
+
+    [Fact]
     public void TestIsAnagram_Want_True_Fail_Case1()
     {
         string s = "tab a cat";

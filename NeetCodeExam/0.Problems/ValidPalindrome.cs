@@ -22,7 +22,7 @@ public class ValidPalindrome
         int left = 0;
         int right = newS.Length - 1;
 
-        while (left != right)
+        while (left < right)
         {
             if (newS[left] != newS[right])
             {
