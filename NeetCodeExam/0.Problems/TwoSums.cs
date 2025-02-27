@@ -19,4 +19,28 @@ public class TwoSums
 
         return new int[] { };
     }
+
+    public int[] TwoSum2(int[] numbers, int target)
+    {
+        int[] result = new int[2];
+        for (int n = 0; n < numbers.Length; n++)
+        {
+            for (int m = 0; m < numbers.Length; m++)
+            {
+                if (numbers[n] == numbers[m])
+                {
+                    continue;
+                }
+
+                if (numbers[n] + numbers[m] == target)
+                {
+                    result[0] = n + 1;
+                    result[1] = m + 1;
+                    return result;
+                }
+            }
+        }
+
+        return result;
+    }
 }
