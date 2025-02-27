@@ -17,7 +17,7 @@ public class TwoSumsTest
     [Fact]
     public void TestTwosums2_Success_Case1()
     {
-        int[] result = app.TwoSum2([1, 2, 3, 4], 3);
+        int[] result = app.TwoSum2_Fixed([1, 2, 3, 4], 3);
         int[] want = [1, 2];
         Assert.Equivalent(want, result);
     }
