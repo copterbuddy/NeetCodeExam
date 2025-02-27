@@ -12,11 +12,10 @@ public class ValidPalindrome
         for (int i = 0; i < s.Length; i++)
         {
             var c = s[i];
-            if (c < 'a' || c > 'z')
+            if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' || c >= '0' && c <= '9')
             {
-                continue;
+                newS += c;
             }
-            newS += c;
         }
 
         int left = 0;
