@@ -39,4 +39,36 @@ public class ValidParentheses
         bool result = Program.ValidParentheses(give);
         Assert.False(result);
     }
+
+    [Fact]
+    public void TestValidParentheses2_Success_Case1()
+    {
+        string give = "()";
+        bool result = Program.ValidParentheses2(give);
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void TestValidParentheses2_Success_Case2()
+    {
+        string give = "()[]{}";
+        bool result = Program.ValidParentheses2(give);
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void TestValidParentheses2_Failed_Case3()
+    {
+        string give = "[{}]";
+        bool result = Program.ValidParentheses2(give);
+        Assert.True(result);
+    }
+
+    [Fact]
+    public void TestValidParentheses2_Failed_Case1()
+    {
+        string give = "(]";
+        bool result = Program.ValidParentheses2(give);
+        Assert.False(result);
+    }
 }

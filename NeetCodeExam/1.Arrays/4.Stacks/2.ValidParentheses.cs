@@ -27,4 +27,30 @@ partial class Program
         }
         return stack.Count is 0;
     }
+
+    public static bool ValidParentheses2(string s)
+    {
+        Stack<char> stack = new();
+        Dictionary<char, char> dic = new();
+        dic.Add('{', '}');
+        dic.Add('[', ']');
+        dic.Add('(', ')');
+
+        foreach (char c in s)
+        {
+            if (dic.ContainsKey(c))
+            {
+                stack.Push(c);
+                continue;
+            }
+
+            if (stack?.Count is null or 0 || dic[stack.Peek()] != c)
+            {
+                return false;
+            }
+            stack.Pop();
+        }
+
+        return stack.Count is 0;
+    }
 }
