@@ -14,7 +14,7 @@ public class ContainerWithMostWaters
             int area = (r - l) * Math.Min(heights[r], heights[l]);
             maxArea = Math.Max(maxArea, area);
 
-            if (r <= l)
+            if (heights[r] < heights[l])
             {
                 r--;
             }
