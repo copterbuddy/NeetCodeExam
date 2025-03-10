@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Immutable;
 
 namespace NeetCodeExam.Problems;
 
@@ -67,5 +68,49 @@ public class TwoSums
         }
 
         return new int[] { -1, -1 };
+    }
+
+    public List<List<int>> ThreeSum(int[] nums)
+    {
+        List<List<int>> res = new();
+        var sNums = nums.OrderBy(x => x).ToArray();
+        int i = 0;
+        while (i < sNums.Length - 1)
+        {
+            if (i > 0 && sNums[i] == sNums[i - 1])
+            {
+                i++;
+                continue;
+            }
+
+            int l = i + 1;
+            int r = sNums.Length - 1;
+            while (l < r)
+            {
+
+                int sum = sNums[i] + sNums[l] + sNums[r];
+                if (sum < 0)
+                {
+                    l++;
+                }
+                else if (sum > 0)
+                {
+                    r--;
+                }
+                else
+                {
+                    res.Add(new List<int>() { sNums[i], sNums[l], sNums[r] });
+                    l++;
+
+                    while (sNums[l] == sNums[l - 1] && l < r)
+                    {
+                        l++;
+                    }
+                }
+            }
+            i++;
+        }
+
+        return res;
     }
 }

@@ -21,4 +21,46 @@ public class TwoSumsTest
         int[] want = [1, 2];
         Assert.Equivalent(want, result);
     }
+
+    [Fact]
+    public void TestThreesums3_Success_Case1()
+    {
+        List<List<int>> result = app.ThreeSum([-1, 0, 1, 2, -1, -4]);
+        List<List<int>> want = [[-1, -1, 2], [-1, 0, 1]];
+        Assert.Equivalent(want, result);
+        Assert.Equal(2, result.Count);
+    }
+
+    [Fact]
+    public void TestThreesums3_Success_Case2()
+    {
+        List<List<int>> result = app.ThreeSum([0, 1, 1]);
+        List<List<int>> want = [];
+        Assert.Equivalent(want, result);
+    }
+
+    [Fact]
+    public void TestThreesums3_Success_Case3()
+    {
+        List<List<int>> result = app.ThreeSum([0, 0, 0]);
+        List<List<int>> want = [[0, 0, 0]];
+        Assert.Equivalent(want, result);
+    }
+
+    [Fact]
+    public void TestThreesums3_Success_Case4()
+    {
+        List<List<int>> result = app.ThreeSum([0, 0, 0, 0]);
+        List<List<int>> want = [[0, 0, 0]];
+        Assert.Equivalent(want, result);
+    }
+
+    [Fact]
+    public void TestThreesums3_Success_Case5()
+    {
+        List<List<int>> result = app.ThreeSum([1, 2, -2, -1]);
+        List<List<int>> want = [];
+        Assert.Equivalent(want, result);
+        Assert.Empty(result);
+    }
 }
