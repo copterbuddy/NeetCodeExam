@@ -8,29 +8,30 @@ public class GenerateParentheseses
     {
         List<string> result = [];
         StringBuilder current = new();
-        void Solve(List<string> r,StringBuilder c,int open, int close, int nn)
+        void Solve(int open, int close)
         {
-            if(nn == open && open == close)
+            if(open == n && close == n)
             {
-                r.Add(c.ToString());
+                result.Add(current.ToString());
                 return;
             }
 
-            if(open < nn)
+            if (open < n)
             {
-                c.Append('(');
-                Solve(r, c, open + 1, close, nn);
-                c.Length--;
+                current.Append('(');
+                Solve(open + 1, close);
+                current.Length -= 1;
             }
 
-            if (close < open)
+            if (close < open) 
             {
-                c.Append(')');
-                Solve(r, c, open, close + 1, nn);
-                c.Length--;
+                current.Append(')');
+                Solve(open, close + 1);
+                current.Length -= 1;
             }
         }
-        Solve(result, current, 0, 0, n);
+
+        Solve(0, 0);
         return result;
     }
 }
